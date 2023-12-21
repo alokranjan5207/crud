@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <h1 id="home">HOMe Page!</h1>
+    {{msg}}
+    <div id="div1">
+        <form action="/show">
+            <input  type="submit" value="Show Records">
+        </form>
+    </div>
+    <div id="div2">
+        <form action="/send" method="post">
+            {% csrf_token %}
+            <h3>ID <input required autofocus type="number" name="ID" ></h3>
+            <h3>Name <input type="text" name="Name"></h3>
+            <h3>Course <input type="text" name="Course"></h3>
+            <h3>Contact <input type="number" name="Contact"></h3>
+            <input type="submit" id="btn">
+        </form>
+
+    </div>
+</body>
+</html>
